@@ -11,6 +11,8 @@ IFS=$'\n\t'
 SCRIPT_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 GIT_ROOT="$SCRIPT_DIR/.."
 
+XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+
 IGNORED_APPS=(
 	# apps without icons:
 	io.atom.electron.BaseApp
@@ -39,6 +41,7 @@ IGNORED_APPS=(
 	org.freedesktop.Platform.GlxInfo
 	org.freedesktop.Platform.VaInfo
 	org.freedesktop.Platform.VulkanInfo
+	org.mozilla.firefox.BaseApp
 	# apps with icons that do not match with App ID:
 	com.github.utsushi.Utsushi
 	com.wps.Office
@@ -48,6 +51,7 @@ IGNORED_APPS=(
 	org.vranki.spectral
 	org.kde.okteta
 	org.freeorion.FreeOrion
+	cat.xtec.clic.JClic
 )
 
 flathub_apps_list="$(mktemp -u)"
@@ -59,7 +63,7 @@ _cleanup() {
 
 trap _cleanup EXIT HUP INT TERM
 
-env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share" \
+env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS" \
 	flatpak remote-ls --app --columns app flathub | sort -u > "$flathub_apps_list"
 git -C "$GIT_ROOT" ls-tree master:Papirus/64x64/apps --name-only |
 	sed 's/\.svg$//' | sort > "$papirus_icons_list"

@@ -12,6 +12,8 @@
 
 Papirus is a free and open source SVG icon theme for Linux, based on [Paper Icon Set](https://github.com/snwh/paper-icon-theme) with a lot of new icons and a few extras, like [Hardcode-Tray support](#hardcoded-tray-icons), [KDE colorscheme support](#kde-colorscheme), [Folder Color support](#folders-color), and [others](#extras).
 
+Android version available [here](https://github.com/PapirusDevelopmentTeam/papirus_icons).
+
 Papirus icon theme is available in five variants:
 
  - Papirus
@@ -65,7 +67,8 @@ Debian users also can install Papirus from our [PPA](https://launchpad.net/~papi
 sudo sh -c "echo 'deb http://ppa.launchpad.net/papirus/papirus/ubuntu focal main' > /etc/apt/sources.list.d/papirus-ppa.list"
 
 sudo apt-get install dirmngr
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F
+sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/papirus.gpg --keyserver keyserver.ubuntu.com --recv E58A9D36647CAE7F
+sudo chmod 644 /etc/apt/trusted.gpg.d/papirus.gpg
 sudo apt-get update
 sudo apt-get install papirus-icon-theme
 ```
@@ -114,11 +117,12 @@ Please note that some packages in the list may be outdated, open [Repology](http
 
 | **Distro**    | **Maintainer**       | **Package**                              |
 | :------------ | :------------------- | :--------------------------------------- |
+| Alpine Linux  | David Demelier       | `sudo apk add papirus-icon-theme` <sup>[[link](https://pkgs.alpinelinux.org/package/edge/community/x86_64/papirus-icon-theme)]</sup> |
 | ALT Linux     | Andrey Cherepanov    | `apt-get install papirus-icon-theme` <sup>[[link](https://packages.altlinux.org/en/Sisyphus/srpms/papirus-icon-theme)]</sup> |
 | Arch Linux    | Felix Yan            | `sudo pacman -S papirus-icon-theme` <sup>community</sup> |
-| Arch Linux    | Mohammadreza Abdollahzadeh | [papirus-icon-theme-git](https://aur.archlinux.org/packages/papirus-icon-theme-git/) <sup>AUR</sup> |
+| Arch Linux    | Mark Wagie | [papirus-icon-theme-git](https://aur.archlinux.org/packages/papirus-icon-theme-git/) <sup>AUR</sup> |
 | Debian 9+     | Yangfl               | `sudo apt install papirus-icon-theme` |
-| Debian        | Hunter Wittenborn    | [papirus-icon-theme](https://mpr.hunterwittenborn.com/packages/papirus-icon-theme/) <sup>MPR</sup> |
+| Debian        | only_vip             | [papirus-icon-theme](https://mpr.hunterwittenborn.com/packages/papirus-icon-theme/) <sup>MPR</sup> |
 | Fedora 27+    | Robert-André Mauchin | `sudo dnf install papirus-icon-theme` |
 | Fedora        | Dirk Davidis         | [papirus-icon-theme](https://copr.fedorainfracloud.org/coprs/dirkdavidis/papirus-icon-theme/) <sup>copr</sup> |
 | FreeBSD       | Hiroki Tagato        | [papirus-icon-theme](https://www.freshports.org/x11-themes/papirus-icon-theme) <sup>freshports</sup> |

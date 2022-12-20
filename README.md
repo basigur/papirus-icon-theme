@@ -129,6 +129,7 @@ Please note that some packages in the list may be outdated, open [Repology](http
 | Gentoo        | Marco Scardovi       | `sudo emerge -a papirus-icon-theme` |
 | NetBSD        | Nia Alarie           | [papirus-icon-theme](http://pkgsrc.se/graphics/papirus-icon-theme) <sup>pkgsrc</sup> |
 | NixOS         | Nixpkgs Contributors | `nix-env -iA nixos.papirus-icon-theme` |
+| OpenBSD       | David Demelier       | `doas pkg_add papirus-icon-theme` |
 | openSUSE      | Matthias Eliasson    | [papirus-icon-theme](https://software.opensuse.org/package/papirus-icon-theme) <sup>official</sup> |
 | ROSA Linux    | Vladimir Penchikov   | `sudo urpmi papirus-icon-theme` |
 | Solus         | Joshua Strobl        | `sudo eopkg it papirus-icon-theme` |
@@ -334,8 +335,6 @@ We are waiting for your pull requests and would love to see this icon theme beco
 
 You can support this open source project by making a voluntary payment:
 
-- Patreon: https://www.patreon.com/varlesh
-- PayPal: https://www.paypal.me/varlesh
 
 ## License
 
